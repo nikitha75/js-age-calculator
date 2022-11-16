@@ -56,7 +56,7 @@ function calcAge() {
         let dys = daysOfMonths[currentMonth - 2];
         days = dys + currentDate - birth.date;
     }
-
+    
     displayAge(years, months, days);
 
     if (birth.year > currentYear || (birth.month > currentMonth && birth.year == currentYear) ||
