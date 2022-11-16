@@ -38,14 +38,6 @@ function calcAge() {
 
     getAge();
 
-    if (birth.year > currentYear || (birth.month > currentMonth && birth.year == currentYear) ||
-        (birth.date > currentDate && birth.month == currentMonth && birth.year == currentYear)) {
-        document.querySelector(".error").style.display = "block";
-    }
-    else {
-        document.querySelector(".error").style.display = "none";
-    }
-
     years = currentYear - birth.year;
 
     if (currentMonth >= birth.month) {
@@ -66,6 +58,15 @@ function calcAge() {
     }
 
     displayAge(years, months, days);
+
+    if (birth.year > currentYear || (birth.month > currentMonth && birth.year == currentYear) ||
+        (birth.date > currentDate && birth.month == currentMonth && birth.year == currentYear)) {
+        document.querySelector(".error").style.display = "block";
+        displayAge("-", "-", "-");
+    }
+    else {
+        document.querySelector(".error").style.display = "none";
+    }
 
 }
 
